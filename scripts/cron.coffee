@@ -15,9 +15,56 @@
 #   return
 # ), true, timeZone)
 
-cron = require('cron').CronJob
+
+
+# cron = require('cron').CronJob
+
+# module.exports = (robot) ->
+#   new cron '*/5 * * * * 1-5', () =>
+#     robot.send {room: "#baigie-bottest"}, "時間ですyo!"
+#     # console.log "時かん"
+#   	, null, true, "Asia/Tokyo"
+
+
+
+
+# cronJob = require('cron').CronJob
+# # 毎秒実行
+# cronTime = '*/5 * * * * *'
+# # 一度だけ実行したい場合、Dateオブジェクトで指定も可能
+# # var cronTime = new Date();
+# module.exports = (robot) ->
+# 	job = new cronJob(
+# 	  cronTime: cronTime
+# 	  onTick: ->
+# 	    robot.send {room: "#baigie-bottest"}, "時間ですyo!"
+# 	    return
+# 	  onComplete: ->
+# 	    console.log 'onComplete!'
+# 	    return
+# 	  start: false
+# 	  timeZone: 'Japan/Tokyo')
+# 	#ジョブ開始
+# 	job.start()
+# 	#ジョブ停止
+# 	#job.stop();
+
+
+
+CronJob = require('cron').CronJob
 
 module.exports = (robot) ->
-  new cron '0 6 20 * * *', () =>
-    robot.send {room: "#baigie-bottest"}, "時間ですyo!"
-  , null, true, "Asia/Tokyo"
+	job = new CronJob('0 2 1 * * *', (->
+
+	  robot.send {room: "#baigie-bottest"}, "yo!ze"
+
+	  return
+	), (->
+
+	  ### This function is executed when the job stops ###
+
+	  return
+	), true, "Asia/Tokyo")
+
+
+

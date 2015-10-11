@@ -1,6 +1,11 @@
 module.exports = (robot) ->
-  robot.hear /まき/, (msg) ->
-    msg.send "何の用ですか"
+  robot.hear /@mr.bg/, (msg) ->
+    msg.send msg.random [
+        "こんにちは",
+        "Hello",
+        ":grinning:",
+        "なんでしょうか？"        
+    ]
 
   robot.hear /(sushi|すし|スシ|寿司)/i, (msg) ->
-    msg.send "スシが食べたい。"
+    msg.send "私はマグロが好きです。"

@@ -4,7 +4,7 @@ var cron;
 cron = require('cron').CronJob;
 
 module.exports = function(robot) {
-  return new cron('0 59 19 * * 1-7', (function(_this) {
+  return new cron('0 6 20 * * *', (function(_this) {
     return function() {
       return robot.send({
         room: "#baigie-bottest"

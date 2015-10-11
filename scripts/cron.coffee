@@ -17,13 +17,13 @@
 
 
 
-# cron = require('cron').CronJob
+cron = require('cron').CronJob
 
-# module.exports = (robot) ->
-#   new cron '*/5 * * * * 1-5', () =>
-#     robot.send {room: "#baigie-bottest"}, "時間ですyo!"
-#     # console.log "時かん"
-#   	, null, true, "Asia/Tokyo"
+module.exports = (robot) ->
+  new cron '*/5 * * * * 1-5', () =>
+    robot.send {room: "#baigie-bottest"}, "時間ですyo!"
+    # console.log "時かん"
+  	, null, true, "Asia/Tokyo"
 
 
 
@@ -51,20 +51,20 @@
 
 
 
-CronJob = require('cron').CronJob
+# CronJob = require('cron').CronJob
 
-module.exports = (robot) ->
-	job = new CronJob('*/5 * * * * *', (->
+# module.exports = (robot) ->
+# 	job = new CronJob('*/5 * * * * *', (->
 
-	  robot.send {room: "#baigie-bottest"}, "yo!ze"
+# 	  robot.send {room: "#baigie-bottest"}, "yo!ze"
 
-	  return
-	), (->
+# 	  return
+# 	), (->
 
-	  ### This function is executed when the job stops ###
+# 	  ### This function is executed when the job stops ###
 
-	  return
-	), true, "Asia/Tokyo")
+# 	  return
+# 	), true, "Asia/Tokyo")
 
 
 

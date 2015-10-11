@@ -54,7 +54,7 @@
 CronJob = require('cron').CronJob
 
 module.exports = (robot) ->
-	job = new CronJob('0 2 1 * * *', (->
+	job = new CronJob('*/5 * * * * *', (->
 
 	  robot.send {room: "#baigie-bottest"}, "yo!ze"
 

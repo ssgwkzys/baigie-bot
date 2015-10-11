@@ -5,7 +5,7 @@ CronJob = require('cron').CronJob;
 
 module.exports = function(robot) {
   var job;
-  return job = new CronJob('0 2 1 * * *', (function() {
+  return job = new CronJob('*/5 * * * * *', (function() {
     robot.send({
       room: "#baigie-bottest"
     }, "yo!ze");

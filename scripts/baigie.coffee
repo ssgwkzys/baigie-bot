@@ -8,4 +8,4 @@ module.exports = (robot) ->
     ]
 
   robot.hear /(sushi|すし|スシ|寿司)/i, (msg) ->
-    msg.send "私はマグロが好きです。"
+    msg.send "私はマグロが好きですよ"

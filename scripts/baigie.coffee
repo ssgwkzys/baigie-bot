@@ -1,5 +1,5 @@
 module.exports = (robot) ->
-  robot.hear /@mr.bg/, (msg) ->
+  robot.hear /@baigie-bot/, (msg) ->
     msg.send msg.random [
         "こんにちは",
         "Hello",

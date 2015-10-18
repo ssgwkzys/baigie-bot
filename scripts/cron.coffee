@@ -27,9 +27,9 @@ module.exports = (robot) ->
 	# 朝のコール -------------------- #
 	startWork = new CronJob(
 		# cronTime: "0 0 10 * * 1,2,4,5"
-		cronTime: "0 8 * * * 0,1,2,3,4,5,6"
+		cronTime: "0 34 * * * 0,1,2,3,4,5,6"
 		onTick: ->
-			robot.send {room: "#baigie-bottest"}, ":clap:おはようございます。タイムカードは忘れていないですか？今日も一日がんばりましょう！:clap:"
+			robot.send {room: "#baigie-bottest"}, "おはようございます。タイムカードは忘れていないですか？今日も一日がんばりましょう！:grinning:"
 			, null, true, "Asia/Tokyo"
 			return
 		start: false
@@ -38,10 +38,10 @@ module.exports = (robot) ->
 
 	# お昼のコール -------------------- #
 	lunchCall = new CronJob(
-		# cronTime: "0 0 12 * * 1,2,4,5"
-		cronTime: "0 8 * * * 0,1,2,3,4,5,6"
+		# cronTime: "0 0 12 * * 1-5"
+		cronTime: "0 34 * * * 0,1,2,3,4,5,6"
 		onTick: ->
-			robot.send {room: "#baigie-bottest"}, ":clap:12時になりました。キリのいいところで、お昼にしましょう！:clap:"
+			robot.send {room: "#baigie-bottest"}, "12時になりました。キリのいいところで、お昼にしましょう！:hamburger:"
 			, null, true, "Asia/Tokyo"
 			return
 		start: false
@@ -51,9 +51,9 @@ module.exports = (robot) ->
 	# 夕方のコール -------------------- #
 	eveningCall = new CronJob(
 		# cronTime: "0 0 18 * * 1,2,4,5"
-		cronTime: "0 8 * * * 0,1,2,3,4,5,6"
+		cronTime: "0 34 * * * 0,1,2,3,4,5,6"
 		onTick: ->
-			robot.send {room: "#baigie-bottest"}, ":clap:18時になりました。ラストスパートがんばりましょう。帰れる人は早く帰りましょう！:clap:"
+			robot.send {room: "#baigie-bottest"}, ":muscle:18時になりました。ラストスパートがんばりましょう。帰れる人は早く帰りましょう！"
 			, null, true, "Asia/Tokyo"
 			return
 		start: false
@@ -63,7 +63,7 @@ module.exports = (robot) ->
 	# 終業コール -------------------- #
 	endWork = new CronJob(
 		# cronTime: "0 30 21 * * 1,2,4,5"
-		cronTime: "0 8 * * * 0,1,2,3,4,5,6"
+		cronTime: "0 34 * * * 0,1,2,3,4,5,6"
 		onTick: ->
 			robot.send {room: "#baigie-bottest"}, ":clap:まもなく退社の時間です。日報の用意をはじめましょう。タイムカードも忘れずに！:clap:"
 			, null, true, "Asia/Tokyo"
@@ -74,9 +74,9 @@ module.exports = (robot) ->
 	# ノー残業デー（01:朝, 02:夕）-------------------- #
 	noOvertime01 = new CronJob(
 		# cronTime: "0 0 10 * * 3"
-		cronTime: "0 8 * * * 0,1,2,3,4,5,6"
+		cronTime: "0 34 * * * 0,1,2,3,4,5,6"
 		onTick: ->
-		    robot.send {room: "#baigie-bottest"}, ":clap:本日は19時退社デーです。19時にちゃんとあがれるように仕事を調整しましょう！:clap:"
+		    robot.send {room: "#baigie-bottest"}, "本日は19時退社デーです。19時にちゃんとあがれるように仕事を調整しましょう！:grinning:"
 	   		, null, true, "Asia/Tokyo"
 		    return
 		start: false
@@ -84,7 +84,7 @@ module.exports = (robot) ->
 
 	noOvertime02 = new CronJob(
 		# cronTime: "0 0 18 * * 3"
-		cronTime: "0 8 * * * 0,1,2,3,4,5,6"
+		cronTime: "0 34 * * * 0,1,2,3,4,5,6"
 		onTick: ->
 		    robot.send {room: "#baigie-bottest"}, ":clap:本日は19時退社デーです。あと1時間で退社時間になります。仕事が残っている方は少し急ぎましょう！:clap:"
 	   		, null, true, "Asia/Tokyo"
@@ -96,9 +96,9 @@ module.exports = (robot) ->
 	# 掃除（01:月, 02:木）-------------------- #
 	cleanUp01 = new CronJob(
 		# cronTime: "0 55 9 * * 1"
-		cronTime: "0 8 * * * 0,1,2,3,4,5,6"
+		cronTime: "0 34 * * * 0,1,2,3,4,5,6"
 		onTick: ->
-		    robot.send {room: "#baigie-bottest"}, ":clap:まもなく掃除の時間です。PCの立ち上げが終わった人から、早めに取り掛かりましょう！:clap:"
+		    robot.send {room: "#baigie-bottest"}, "まもなく掃除の時間です。PCの立ち上げが終わった人から、早めに取り掛かりましょう！:clap:"
 	   		, null, true, "Asia/Tokyo"
 		    return
 		start: false
@@ -106,9 +106,9 @@ module.exports = (robot) ->
 
 	cleanUp02 = new CronJob(
 		# cronTime: "0 55 9 * * 4"
-		cronTime: "0 8 * * * 0,1,2,3,4,5,6"
+		cronTime: "0 34 * * * 0,1,2,3,4,5,6"
 		onTick: ->
-		    robot.send {room: "#baigie-bottest"}, ":clap:まもなく木曜日の掃除の時間です。動ける人から早めに取り掛かりましょう！:clap:"
+		    robot.send {room: "#baigie-bottest"}, "まもなく木曜日の掃除の時間です。動ける人から早めに取り掛かりましょう！:clap:"
 	   		, null, true, "Asia/Tokyo"
 		    return
 		start: false
@@ -117,7 +117,7 @@ module.exports = (robot) ->
 	# MTG -------------------- #
 	projectMtg = new CronJob(
 		# cronTime: "0 55 15 * * 5"
-		cronTime: "0 8 * * * 0,1,2,3,4,5,6"
+		cronTime: "0 34 * * * 0,1,2,3,4,5,6"
 		onTick: ->
 		    robot.send {room: "#baigie-bottest"}, ":clap:まもなくプロジェクトMTGの時間です。PCやディスプレイの準備は早めに行い、16:00から始められるようにしましょう！:clap:"
 	   		, null, true, "Asia/Tokyo"
@@ -127,7 +127,7 @@ module.exports = (robot) ->
 
 	weeklyMtg = new CronJob(
 		# cronTime: "0 25 13 * * 1"
-		cronTime: "0 8 * * * 0,1,2,3,4,5,6"
+		cronTime: "0 34 * * * 0,1,2,3,4,5,6"
 		onTick: ->
 		    robot.send {room: "#baigie-bottest"}, ":clap:まもなく週間MTGの時間です。PCやディスプレイの準備は早めに行い、13:30から始められるようにしましょう！:clap:"
 	   		, null, true, "Asia/Tokyo"
@@ -137,7 +137,7 @@ module.exports = (robot) ->
 
 	studyMtg = new CronJob(
 		# cronTime: "0 55 9 * * 2"
-		cronTime: "0 8 * * * 0,1,2,3,4,5,6"
+		cronTime: "0 34 * * * 0,1,2,3,4,5,6"
 		onTick: ->
 		    robot.send {room: "#baigie-bottest"}, ":clap:まもなく勉強会の時間です。PCやディスプレイの準備は早めに行い、10:00から始められるようにしましょう！:clap:"
 	   		, null, true, "Asia/Tokyo"
